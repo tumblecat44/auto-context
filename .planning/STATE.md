@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** Use Claude Code normally, and your project context improves automatically.
-**Current focus:** Phase 4: Explicit Feedback
+**Current focus:** Phase 5: Pattern Extraction
 
 ## Current Position
 
-Phase: 4 of 8 (Explicit Feedback) -- NOT STARTED
+Phase: 5 of 8 (Pattern Extraction) -- NOT STARTED
 Plan: 0 of 2 in current phase
-Status: Phase 3 Complete, Ready for Phase 4 Planning
-Last activity: 2026-02-25 -- Completed Phase 3 execution (2 plans, 4 tasks, all verified)
+Status: Phase 4 Complete, Ready for Phase 5 Planning
+Last activity: 2026-02-25 -- Completed Phase 4 execution (2 plans, 3 tasks, all verified)
 
-Progress: [####......] 37%
+Progress: [#####.....] 50%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 6
-- Average duration: 3.2min
-- Total execution time: 0.32 hours
+- Total plans completed: 8
+- Average duration: 3.1min
+- Total execution time: 0.41 hours
 
 **By Phase:**
 
@@ -33,9 +33,11 @@ Progress: [####......] 37%
 | Phase 02 P02 | 3min | 2 tasks | 1 file (+1 deleted) |
 | Phase 03 P01 | 3min | 2 tasks | 2 files |
 | Phase 03 P02 | 3min | 2 tasks | 3 files |
+| Phase 04 P01 | 3min | 2 tasks | 2 files |
+| Phase 04 P02 | 2min | 1 task | 1 file |
 
 **Recent Trend:**
-- Last 5 plans: 5min, 4min, 3min, 3min, 3min
+- Last 5 plans: 3min, 3min, 3min, 3min, 2min
 - Trend: stable
 
 *Updated after each plan completion*
@@ -65,6 +67,10 @@ Recent decisions affecting current work:
 - [Phase 03]: PostToolUseFailure check before case statement for cleaner flow
 - [Phase 03]: Safety net mkdir/touch in observe-tool.sh in case SessionStart didn't run
 - [Phase 03]: Stale log detection via jq select with head -1 | wc -c for efficiency
+- [Phase 04]: Colon-based extraction for trigger phrases (macOS sed compat, avoids //I flag)
+- [Phase 04]: PROMPT_LOWER for English pattern matching, original PROMPT for Korean (grep -qF)
+- [Phase 04]: jq -nc for session log JSONL (proper JSON escaping vs manual string construction)
+- [Phase 04]: Anti-pattern count in status line only when > 0 (clean default output)
 
 ### Pending Todos
 
@@ -77,5 +83,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: Completed Phase 03 (Session Observation complete, all 4 tasks verified)
+Stopped at: Completed Phase 04 (Explicit Feedback complete, 3 tasks across 2 plans, all 13 checks verified)
 Resume file: None

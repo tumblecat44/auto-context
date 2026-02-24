@@ -15,7 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Plugin Skeleton & Injection** - Valid plugin manifest, CLAUDE.md marker injection with token budget, data store (completed 2026-02-24)
 - [x] **Phase 2: Project Bootstrap** - /ac-init scans project structure and generates initial context (completed 2026-02-25)
 - [x] **Phase 3: Session Observation** - PostToolUse hooks capture file changes and commands in real-time JSONL log (completed 2026-02-25)
-- [ ] **Phase 4: Explicit Feedback** - User prompts like "remember this" and "don't do this" captured as conventions/anti-patterns
+- [x] **Phase 4: Explicit Feedback** - User prompts like "remember this" and "don't do this" captured as conventions/anti-patterns (completed 2026-02-25)
 - [ ] **Phase 5: Pattern Extraction** - Stop hook agent analyzes session logs to identify coding patterns
 - [ ] **Phase 6: Convention Lifecycle & Review** - 4-stage lifecycle with mandatory user review gate before CLAUDE.md
 - [ ] **Phase 7: Anti-Patterns & Reward Signals** - Correction detection, error tracking, and confidence scoring
@@ -80,8 +80,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 04-01-PLAN.md — UserPromptSubmit hook for English/Korean feedback detection with convention/anti-pattern persistence
-- [ ] 04-02-PLAN.md — Session-start status line enhancement with anti-pattern count
+- [x] 04-01-PLAN.md — UserPromptSubmit hook for English/Korean feedback detection with convention/anti-pattern persistence
+- [x] 04-02-PLAN.md — Session-start status line enhancement with anti-pattern count
 
 ### Phase 5: Pattern Extraction
 **Goal**: At session end, an agent analyzes the session log and identifies intentional coding patterns with cited evidence
@@ -159,7 +159,7 @@ Note: Phases 2, 3, 4 all depend on Phase 1 and could execute in parallel, but se
 | 1. Plugin Skeleton & Injection | 2/2 | Complete    | 2026-02-24 |
 | 2. Project Bootstrap | 2/2 | Complete | 2026-02-25 |
 | 3. Session Observation | 2/2 | Complete | 2026-02-25 |
-| 4. Explicit Feedback | 0/2 | Planned | - |
+| 4. Explicit Feedback | 2/2 | Complete | 2026-02-25 |
 | 5. Pattern Extraction | 0/2 | Not started | - |
 | 6. Convention Lifecycle & Review | 0/3 | Not started | - |
 | 7. Anti-Patterns & Reward Signals | 0/2 | Not started | - |
