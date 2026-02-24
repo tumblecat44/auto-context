@@ -12,7 +12,7 @@ Auto-Context transforms Claude Code's project context from a manually-maintained
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Plugin Skeleton & Injection** - Valid plugin manifest, CLAUDE.md marker injection with token budget, data store
+- [x] **Phase 1: Plugin Skeleton & Injection** - Valid plugin manifest, CLAUDE.md marker injection with token budget, data store (completed 2026-02-24)
 - [ ] **Phase 2: Project Bootstrap** - /ac-init scans project structure and generates initial context
 - [ ] **Phase 3: Session Observation** - PostToolUse hooks capture file changes and commands in real-time JSONL log
 - [ ] **Phase 4: Explicit Feedback** - User prompts like "remember this" and "don't do this" captured as conventions/anti-patterns
@@ -156,7 +156,7 @@ Note: Phases 2, 3, 4 all depend on Phase 1 and could execute in parallel, but se
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Plugin Skeleton & Injection | 1/2 | In Progress | - |
+| 1. Plugin Skeleton & Injection | 1/2 | Complete    | 2026-02-24 |
 | 2. Project Bootstrap | 0/2 | Not started | - |
 | 3. Session Observation | 0/2 | Not started | - |
 | 4. Explicit Feedback | 0/2 | Not started | - |
