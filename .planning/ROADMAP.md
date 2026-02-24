@@ -160,7 +160,7 @@ Note: Phases 2, 3, 4 all depend on Phase 1 and could execute in parallel, but se
 | 2. Project Bootstrap | 2/2 | Complete | 2026-02-25 |
 | 3. Session Observation | 2/2 | Complete | 2026-02-25 |
 | 4. Explicit Feedback | 2/2 | Complete | 2026-02-25 |
-| 5. Pattern Extraction | 0/2 | Not started | - |
+| 5. Pattern Extraction | 0/2 | Planned | - |
 | 6. Convention Lifecycle & Review | 0/3 | Not started | - |
 | 7. Anti-Patterns & Reward Signals | 0/2 | Not started | - |
 | 8. Path-Scoped Rules & Smart Injection | 0/3 | Not started | - |
