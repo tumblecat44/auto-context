@@ -33,12 +33,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. CLAUDE.md auto-content appears inside `<!-- auto-context:start/end -->` markers and existing user content is untouched
   4. Marker section validates integrity on injection (handles corruption, duplication, missing markers gracefully)
   5. Auto-context section never exceeds 1000 tokens regardless of input
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 01-01: Plugin manifest and directory structure
-- [ ] 01-02: Data store initialization and JSONL session log format
-- [ ] 01-03: CLAUDE.md marker injection with token budget enforcement
+- [ ] 01-01-PLAN.md — Plugin scaffold, hook config, data store init, JSONL session log
+- [ ] 01-02-PLAN.md — CLAUDE.md marker injection with integrity validation and token budget enforcement
 
 ### Phase 2: Project Bootstrap
 **Goal**: Users run /ac-init and get high-quality project context that surpasses Claude Code's built-in /init
@@ -157,7 +156,7 @@ Note: Phases 2, 3, 4 all depend on Phase 1 and could execute in parallel, but se
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Plugin Skeleton & Injection | 0/3 | Not started | - |
+| 1. Plugin Skeleton & Injection | 0/2 | Planned | - |
 | 2. Project Bootstrap | 0/2 | Not started | - |
 | 3. Session Observation | 0/2 | Not started | - |
 | 4. Explicit Feedback | 0/2 | Not started | - |
