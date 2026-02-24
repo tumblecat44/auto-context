@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Plugin Skeleton & Injection** - Valid plugin manifest, CLAUDE.md marker injection with token budget, data store (completed 2026-02-24)
 - [x] **Phase 2: Project Bootstrap** - /ac-init scans project structure and generates initial context (completed 2026-02-25)
-- [ ] **Phase 3: Session Observation** - PostToolUse hooks capture file changes and commands in real-time JSONL log
+- [x] **Phase 3: Session Observation** - PostToolUse hooks capture file changes and commands in real-time JSONL log (completed 2026-02-25)
 - [ ] **Phase 4: Explicit Feedback** - User prompts like "remember this" and "don't do this" captured as conventions/anti-patterns
 - [ ] **Phase 5: Pattern Extraction** - Stop hook agent analyzes session logs to identify coding patterns
 - [ ] **Phase 6: Convention Lifecycle & Review** - 4-stage lifecycle with mandatory user review gate before CLAUDE.md
@@ -66,8 +66,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 03-01-PLAN.md — PostToolUse observation hook for Write/Edit/Bash with PostToolUseFailure error logging
-- [ ] 03-02-PLAN.md — SessionEnd log rotation and SessionStart stale log safety net
+- [x] 03-01-PLAN.md — PostToolUse observation hook for Write/Edit/Bash with PostToolUseFailure error logging
+- [x] 03-02-PLAN.md — SessionEnd log rotation and SessionStart stale log safety net
 
 ### Phase 4: Explicit Feedback
 **Goal**: Users can say "remember this" or "don't do this" and the plugin captures it immediately as a convention or anti-pattern
@@ -158,7 +158,7 @@ Note: Phases 2, 3, 4 all depend on Phase 1 and could execute in parallel, but se
 |-------|----------------|--------|-----------|
 | 1. Plugin Skeleton & Injection | 2/2 | Complete    | 2026-02-24 |
 | 2. Project Bootstrap | 2/2 | Complete | 2026-02-25 |
-| 3. Session Observation | 0/2 | Not started | - |
+| 3. Session Observation | 2/2 | Complete | 2026-02-25 |
 | 4. Explicit Feedback | 0/2 | Not started | - |
 | 5. Pattern Extraction | 0/2 | Not started | - |
 | 6. Convention Lifecycle & Review | 0/3 | Not started | - |
