@@ -77,11 +77,11 @@ Plans:
   1. UserPromptSubmit hook detects "remember this" / "don't do this" patterns (English and Korean) and writes to storage immediately
   2. Explicit feedback is weighted 10x over implicit signals in all downstream confidence scoring
   3. Session-start status line displays "Auto-Context: N conventions active, M candidates pending"
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 04-01: UserPromptSubmit hook for feedback detection
-- [ ] 04-02: Session-start status line injection
+- [ ] 04-01-PLAN.md — UserPromptSubmit hook for English/Korean feedback detection with convention/anti-pattern persistence
+- [ ] 04-02-PLAN.md — Session-start status line enhancement with anti-pattern count
 
 ### Phase 5: Pattern Extraction
 **Goal**: At session end, an agent analyzes the session log and identifies intentional coding patterns with cited evidence
@@ -159,7 +159,7 @@ Note: Phases 2, 3, 4 all depend on Phase 1 and could execute in parallel, but se
 | 1. Plugin Skeleton & Injection | 2/2 | Complete    | 2026-02-24 |
 | 2. Project Bootstrap | 2/2 | Complete | 2026-02-25 |
 | 3. Session Observation | 2/2 | Complete | 2026-02-25 |
-| 4. Explicit Feedback | 0/2 | Not started | - |
+| 4. Explicit Feedback | 0/2 | Planned | - |
 | 5. Pattern Extraction | 0/2 | Not started | - |
 | 6. Convention Lifecycle & Review | 0/3 | Not started | - |
 | 7. Anti-Patterns & Reward Signals | 0/2 | Not started | - |
