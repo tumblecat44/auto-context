@@ -32,6 +32,15 @@ CONF
 # Create if missing but never overwrite (may have current session data)
 [ -f "$STORE_DIR/session-log.jsonl" ] || touch "$STORE_DIR/session-log.jsonl"
 
+# Safety net: clear stale session log from crashed/killed sessions
+# If session-log.jsonl has entries with a different session_id, this is stale data
+if [ -s "$STORE_DIR/session-log.jsonl" ]; then
+  STALE_COUNT=$(jq -r --arg sid "$SESSION_ID" 'select(.session_id != $sid) | .session_id' "$STORE_DIR/session-log.jsonl" 2>/dev/null | head -1 | wc -c | tr -d ' ')
+  if [ "$STALE_COUNT" -gt 1 ]; then
+    : > "$STORE_DIR/session-log.jsonl"
+  fi
+fi
+
 # Log session start event in JSONL format
 echo "{\"ts\":\"$(date -u +%Y-%m-%dT%H:%M:%SZ)\",\"event\":\"session_start\",\"session_id\":\"${SESSION_ID}\",\"cwd\":\"${CWD}\"}" >> "$STORE_DIR/session-log.jsonl"
 
