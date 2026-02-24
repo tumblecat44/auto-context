@@ -1,0 +1,33 @@
+{
+  "version": "2.0",
+  "lastUpdated": "2026-02-24T10:30:00.000Z",
+  "activeFeatures": ["auto-context"],
+  "primaryFeature": "auto-context",
+  "features": {
+    "auto-context": {
+      "phase": "plan",
+      "startedAt": "2026-02-24T10:30:00.000Z",
+      "planDocument": "docs/01-plan/features/auto-context.plan.md",
+      "matchRate": null,
+      "iterationCount": 0
+    }
+  },
+  "pipeline": {
+    "currentPhase": 1,
+    "level": "Dynamic",
+    "phaseHistory": []
+  },
+  "session": {
+    "startedAt": "2026-02-24T05:57:08.033Z",
+    "onboardingCompleted": true,
+    "lastActivity": "2026-02-24T10:30:00.000Z"
+  },
+  "history": [
+    {
+      "action": "plan_created",
+      "feature": "auto-context",
+      "timestamp": "2026-02-24T10:30:00.000Z",
+      "details": "Plan document created from brainstorm + Steinberger reverse-engineering"
+    }
+  ]
+}
