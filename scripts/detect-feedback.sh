@@ -76,7 +76,7 @@ fi
 
 # Atomic JSON append: write to tmp then mv (prevents corruption from concurrent writes)
 jq --arg text "$INSTRUCTION" --arg ts "$TS" --arg sid "$SESSION_ID" \
-  '. + [{"text": $text, "confidence": 1.0, "source": "explicit", "created_at": $ts, "session_id": $sid}]' \
+  '. + [{"text": $text, "confidence": 1.0, "source": "explicit", "created_at": $ts, "session_id": $sid, "stage": "active", "last_referenced_session": 0}]' \
   "$TARGET_FILE" > "$TARGET_FILE.tmp" && mv "$TARGET_FILE.tmp" "$TARGET_FILE"
 
 # Log explicit feedback event to session log for Phase 5 visibility
