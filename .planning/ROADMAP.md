@@ -92,11 +92,11 @@ Plans:
   2. Extraction agent classifies each pattern as intentional / incidental / framework-imposed / uncertain
   3. Only intentional patterns are promoted to candidate status (framework-imposed patterns excluded)
   4. Each detected pattern includes specific file:line evidence citations
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 05-01: Stop hook agent handler and extraction prompt design
-- [ ] 05-02: Pattern classification and evidence citation
+- [ ] 05-01-PLAN.md — Extraction agent prompt with classification taxonomy and evidence requirements
+- [ ] 05-02-PLAN.md — Stop agent hook registration and session log archive safety net
 
 ### Phase 6: Convention Lifecycle & Review
 **Goal**: Conventions follow a rigorous 4-stage lifecycle and never reach CLAUDE.md without explicit user approval
