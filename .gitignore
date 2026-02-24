@@ -18,3 +18,9 @@ node_modules/
 .env
 .env.local
 .env.*.local
+
+# Auto-Context runtime data (created in user projects)
+.auto-context/
+
+# Temporary files for safe file operations
+*.tmp
