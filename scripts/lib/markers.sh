@@ -10,7 +10,12 @@ MARKER_END="<!-- auto-context:end -->"
 _count_marker() {
   local file="$1"
   local pattern="$2"
-  grep -c -F "$pattern" "$file" 2>/dev/null | head -1 || echo 0
+  local count
+  count=$(grep -c -F "$pattern" "$file" 2>/dev/null) || true
+  # Ensure we return a clean integer (strip any whitespace/newlines)
+  count=$(echo "$count" | tr -d '[:space:]')
+  [ -z "$count" ] && count=0
+  echo "$count"
 }
 
 # has_markers(file) - Returns 0 if both start and end markers exist, 1 otherwise
@@ -108,15 +113,21 @@ ensure_markers() {
 
 # inject_content(file, content) - Replace everything between markers with new content
 # Uses awk (NOT sed -i) for macOS/Linux compatibility
+# Passes content via temp file to handle multiline strings safely
 inject_content() {
   local file="$1"
   local content="$2"
   local tmpfile="${file}.ac-tmp"
+  local contentfile="${file}.ac-content"
 
-  awk -v marker_start="$MARKER_START" -v marker_end="$MARKER_END" -v new_content="$content" '
+  # Write content to temp file so awk can read it (avoids -v multiline issues)
+  printf '%s\n' "$content" > "$contentfile"
+
+  awk -v marker_start="$MARKER_START" -v marker_end="$MARKER_END" -v cfile="$contentfile" '
     $0 == marker_start {
       print
-      print new_content
+      while ((getline line < cfile) > 0) print line
+      close(cfile)
       skip = 1
       next
     }
@@ -129,4 +140,5 @@ inject_content() {
   ' "$file" > "$tmpfile"
 
   mv "$tmpfile" "$file"
+  rm -f "$contentfile"
 }
