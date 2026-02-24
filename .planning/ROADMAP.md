@@ -63,11 +63,11 @@ Plans:
   2. PostToolUse hook logs Bash command executions and errors to session-log.jsonl
   3. All observation hooks execute in under 100ms (no user-perceived delay)
   4. Session log is rotated/cleared at session end (never accumulates across sessions)
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 03-01: PostToolUse hook for file and command observation
-- [ ] 03-02: Session log rotation and performance validation
+- [ ] 03-01-PLAN.md — PostToolUse observation hook for Write/Edit/Bash with PostToolUseFailure error logging
+- [ ] 03-02-PLAN.md — SessionEnd log rotation and SessionStart stale log safety net
 
 ### Phase 4: Explicit Feedback
 **Goal**: Users can say "remember this" or "don't do this" and the plugin captures it immediately as a convention or anti-pattern
