@@ -108,12 +108,12 @@ Plans:
   3. Conventions decay after 5+ sessions without reference and are removed from CLAUDE.md injection
   4. Maximum 50 active conventions enforced (lowest-confidence evicted when exceeded)
   5. /ac-status shows observation counts, candidates, conventions, anti-patterns, and reward trends
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 06-01: Lifecycle state machine and promotion/decay logic
-- [ ] 06-02: /ac-review skill with approve/reject/edit per candidate
-- [ ] 06-03: /ac-status skill and context preservation hooks
+- [ ] 06-01-PLAN.md — Lifecycle state machine: session counter, promotion, decay, cap enforcement, migration, changelog
+- [ ] 06-02-PLAN.md — /ac-review and /ac-status skills for mandatory review gate and pipeline visibility
+- [ ] 06-03-PLAN.md — PreCompact context preservation hook and SessionStart restore logic
 
 ### Phase 7: Anti-Patterns & Reward Signals
 **Goal**: The plugin detects what Claude should NOT do (from corrections and errors) and measures convention quality through reward signals
@@ -161,6 +161,6 @@ Note: Phases 2, 3, 4 all depend on Phase 1 and could execute in parallel, but se
 | 3. Session Observation | 2/2 | Complete | 2026-02-25 |
 | 4. Explicit Feedback | 2/2 | Complete | 2026-02-25 |
 | 5. Pattern Extraction | 2/2 | Complete | 2026-02-25 |
-| 6. Convention Lifecycle & Review | 0/3 | Not started | - |
+| 6. Convention Lifecycle & Review | 0/3 | Planned | - |
 | 7. Anti-Patterns & Reward Signals | 0/2 | Not started | - |
 | 8. Path-Scoped Rules & Smart Injection | 0/3 | Not started | - |
