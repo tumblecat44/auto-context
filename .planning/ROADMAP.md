@@ -13,7 +13,7 @@ Auto-Context transforms Claude Code's project context from a manually-maintained
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Plugin Skeleton & Injection** - Valid plugin manifest, CLAUDE.md marker injection with token budget, data store (completed 2026-02-24)
-- [ ] **Phase 2: Project Bootstrap** - /ac-init scans project structure and generates initial context
+- [x] **Phase 2: Project Bootstrap** - /ac-init scans project structure and generates initial context (completed 2026-02-25)
 - [ ] **Phase 3: Session Observation** - PostToolUse hooks capture file changes and commands in real-time JSONL log
 - [ ] **Phase 4: Explicit Feedback** - User prompts like "remember this" and "don't do this" captured as conventions/anti-patterns
 - [ ] **Phase 5: Pattern Extraction** - Stop hook agent analyzes session logs to identify coding patterns
@@ -51,8 +51,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — /ac-init skill with discover-commands script and multi-step scanning instructions
-- [ ] 02-02-PLAN.md — /ac-reset skill and plugin skills validation
+- [x] 02-01-PLAN.md — /ac-init skill with discover-commands script and multi-step scanning instructions
+- [x] 02-02-PLAN.md — /ac-reset skill and plugin skills validation
 
 ### Phase 3: Session Observation
 **Goal**: The plugin silently captures file modifications and command executions in real-time with zero user-perceived latency
@@ -157,7 +157,7 @@ Note: Phases 2, 3, 4 all depend on Phase 1 and could execute in parallel, but se
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Plugin Skeleton & Injection | 2/2 | Complete    | 2026-02-24 |
-| 2. Project Bootstrap | 0/2 | Not started | - |
+| 2. Project Bootstrap | 2/2 | Complete | 2026-02-25 |
 | 3. Session Observation | 0/2 | Not started | - |
 | 4. Explicit Feedback | 0/2 | Not started | - |
 | 5. Pattern Extraction | 0/2 | Not started | - |

@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** Use Claude Code normally, and your project context improves automatically.
-**Current focus:** Phase 1: Plugin Skeleton & Injection
+**Current focus:** Phase 3: Session Observation
 
 ## Current Position
 
-Phase: 1 of 8 (Plugin Skeleton & Injection) -- COMPLETE
-Plan: 2 of 2 in current phase
-Status: Phase Complete
-Last activity: 2026-02-25 -- Completed 01-02-PLAN.md (Marker injection & token budget)
+Phase: 3 of 8 (Session Observation) -- NOT STARTED
+Plan: 0 of 2 in current phase
+Status: Phase 2 Complete, Ready for Phase 3 Planning
+Last activity: 2026-02-25 -- Completed Phase 2 execution (2 plans, 4 tasks, all verified)
 
-Progress: [##........] 12%
+Progress: [###.......] 25%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 2
+- Total plans completed: 4
 - Average duration: 3.5min
-- Total execution time: 0.12 hours
+- Total execution time: 0.23 hours
 
 **By Phase:**
 
@@ -29,9 +29,11 @@ Progress: [##........] 12%
 |-------|-------|-------|----------|
 | Phase 01 P01 | 2min | 2 tasks | 8 files |
 | Phase 01 P02 | 5min | 2 tasks | 3 files |
+| Phase 02 P01 | 4min | 2 tasks | 2 files |
+| Phase 02 P02 | 3min | 2 tasks | 1 file (+1 deleted) |
 
 **Recent Trend:**
-- Last 5 plans: 2min, 5min
+- Last 5 plans: 2min, 5min, 4min, 3min
 - Trend: stable
 
 *Updated after each plan completion*
@@ -53,6 +55,10 @@ Recent decisions affecting current work:
 - [Phase 01]: grep -F (fixed string) for marker matching -- avoids HTML comment regex issues
 - [Phase 01]: Content passed to awk via temp file for multiline safety across awk versions
 - [Phase 01]: tr -d sanitization for grep -c output on macOS
+- [Phase 02]: SKILL.md as prompt-driven scanning -- leverages Claude reasoning for pattern detection
+- [Phase 02]: discover-commands.sh handles deterministic extraction, SKILL.md handles pattern recognition
+- [Phase 02]: Bootstrap conventions scored 0.6-0.9 with source: "bootstrap" for later lifecycle management
+- [Phase 02]: Merge strategy: preserve non-bootstrap conventions, replace bootstrap ones on re-run
 
 ### Pending Todos
 
@@ -65,5 +71,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: Completed 01-02-PLAN.md (Phase 01 complete)
+Stopped at: Completed Phase 02 (Project Bootstrap complete, all 4 tasks verified)
 Resume file: None
