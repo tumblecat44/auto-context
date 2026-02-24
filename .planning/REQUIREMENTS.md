@@ -9,11 +9,11 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Plugin Foundation
 
-- [ ] **PLUG-01**: Plugin manifest (plugin.json) registers hooks, skills, agents automatically on install
-- [ ] **PLUG-02**: Plugin operates zero-config — no user configuration needed after `claude plugin install`
+- [x] **PLUG-01**: Plugin manifest (plugin.json) registers hooks, skills, agents automatically on install
+- [x] **PLUG-02**: Plugin operates zero-config — no user configuration needed after `claude plugin install`
 - [ ] **PLUG-03**: CLAUDE.md auto-content lives in marker sections (`<!-- auto-context:start/end -->`), user content never touched
 - [ ] **PLUG-04**: Marker section validates integrity on every injection (handles corruption, duplication, missing markers)
-- [ ] **PLUG-05**: `claude plugin validate .` passes on the plugin package
+- [x] **PLUG-05**: `claude plugin validate .` passes on the plugin package
 
 ### Bootstrap & Discovery
 
@@ -28,7 +28,7 @@ Requirements for initial release. Each maps to roadmap phases.
 - [ ] **OBSV-01**: PostToolUse hook logs file modifications (Write/Edit) to session log in JSONL format
 - [ ] **OBSV-02**: PostToolUse hook logs Bash command executions and errors to session log
 - [ ] **OBSV-03**: All observation hooks execute < 100ms (no user-perceived latency)
-- [ ] **OBSV-04**: Session log uses JSONL format (O(1) appends, not JSON arrays)
+- [x] **OBSV-04**: Session log uses JSONL format (O(1) appends, not JSON arrays)
 - [ ] **OBSV-05**: Session log rotated/cleared at session end (never accumulates across sessions)
 
 ### Explicit Feedback
@@ -132,11 +132,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| PLUG-01 | Phase 1 | Pending |
-| PLUG-02 | Phase 1 | Pending |
+| PLUG-01 | Phase 1 | Complete |
+| PLUG-02 | Phase 1 | Complete |
 | PLUG-03 | Phase 1 | Pending |
 | PLUG-04 | Phase 1 | Pending |
-| PLUG-05 | Phase 1 | Pending |
+| PLUG-05 | Phase 1 | Complete |
 | BOOT-01 | Phase 2 | Pending |
 | BOOT-02 | Phase 2 | Pending |
 | BOOT-03 | Phase 2 | Pending |
@@ -145,7 +145,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | OBSV-01 | Phase 3 | Pending |
 | OBSV-02 | Phase 3 | Pending |
 | OBSV-03 | Phase 3 | Pending |
-| OBSV-04 | Phase 1 | Pending |
+| OBSV-04 | Phase 1 | Complete |
 | OBSV-05 | Phase 3 | Pending |
 | FDBK-01 | Phase 4 | Pending |
 | FDBK-02 | Phase 4 | Pending |

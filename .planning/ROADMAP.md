@@ -36,7 +36,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 2 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — Plugin scaffold, hook config, data store init, JSONL session log
+- [x] 01-01-PLAN.md — Plugin scaffold, hook config, data store init, JSONL session log
 - [ ] 01-02-PLAN.md — CLAUDE.md marker injection with integrity validation and token budget enforcement
 
 ### Phase 2: Project Bootstrap
@@ -156,7 +156,7 @@ Note: Phases 2, 3, 4 all depend on Phase 1 and could execute in parallel, but se
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Plugin Skeleton & Injection | 0/2 | Planned | - |
+| 1. Plugin Skeleton & Injection | 1/2 | In Progress | - |
 | 2. Project Bootstrap | 0/2 | Not started | - |
 | 3. Session Observation | 0/2 | Not started | - |
 | 4. Explicit Feedback | 0/2 | Not started | - |
