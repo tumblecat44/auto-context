@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** Use Claude Code normally, and your project context improves automatically.
-**Current focus:** Phase 5: Pattern Extraction
+**Current focus:** Phase 6: Convention Lifecycle & Review
 
 ## Current Position
 
-Phase: 5 of 8 (Pattern Extraction) -- NOT STARTED
-Plan: 0 of 2 in current phase
-Status: Phase 4 Complete, Ready for Phase 5 Planning
-Last activity: 2026-02-25 -- Completed Phase 4 execution (2 plans, 3 tasks, all verified)
+Phase: 6 of 8 (Convention Lifecycle & Review) -- NOT STARTED
+Plan: 0 of 3 in current phase
+Status: Phase 5 Complete, Ready for Phase 6 Planning
+Last activity: 2026-02-25 -- Completed Phase 5 execution (2 plans, 3 tasks, all verified)
 
-Progress: [#####.....] 50%
+Progress: [######....] 62%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 8
-- Average duration: 3.1min
-- Total execution time: 0.41 hours
+- Total plans completed: 10
+- Average duration: 2.9min
+- Total execution time: 0.48 hours
 
 **By Phase:**
 
@@ -35,10 +35,12 @@ Progress: [#####.....] 50%
 | Phase 03 P02 | 3min | 2 tasks | 3 files |
 | Phase 04 P01 | 3min | 2 tasks | 2 files |
 | Phase 04 P02 | 2min | 1 task | 1 file |
+| Phase 05 P01 | 2min | 1 task | 1 file |
+| Phase 05 P02 | 2min | 2 tasks | 2 files |
 
 **Recent Trend:**
-- Last 5 plans: 3min, 3min, 3min, 3min, 2min
-- Trend: stable
+- Last 5 plans: 3min, 3min, 2min, 2min, 2min
+- Trend: stable/improving
 
 *Updated after each plan completion*
 
@@ -71,6 +73,10 @@ Recent decisions affecting current work:
 - [Phase 04]: PROMPT_LOWER for English pattern matching, original PROMPT for Korean (grep -qF)
 - [Phase 04]: jq -nc for session log JSONL (proper JSON escaping vs manual string construction)
 - [Phase 04]: Anti-pattern count in status line only when > 0 (clean default output)
+- [Phase 05]: Single agent hook (not command+agent) for simplicity -- pre-check logic in agent prompt
+- [Phase 05]: ${CLAUDE_PLUGIN_ROOT} for primary path with fallback resolution and inline minimal instructions
+- [Phase 05]: Confidence 0.3 for extraction candidates (below bootstrap 0.6+ and explicit 1.0)
+- [Phase 05]: Archive session-log.jsonl to .prev before SessionEnd truncation (race condition safety)
 
 ### Pending Todos
 
@@ -83,5 +89,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: Completed Phase 04 (Explicit Feedback complete, 3 tasks across 2 plans, all 13 checks verified)
+Stopped at: Completed Phase 05 (Pattern Extraction complete, 3 tasks across 2 plans, all verified)
 Resume file: None

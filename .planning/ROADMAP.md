@@ -16,7 +16,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 2: Project Bootstrap** - /ac-init scans project structure and generates initial context (completed 2026-02-25)
 - [x] **Phase 3: Session Observation** - PostToolUse hooks capture file changes and commands in real-time JSONL log (completed 2026-02-25)
 - [x] **Phase 4: Explicit Feedback** - User prompts like "remember this" and "don't do this" captured as conventions/anti-patterns (completed 2026-02-25)
-- [ ] **Phase 5: Pattern Extraction** - Stop hook agent analyzes session logs to identify coding patterns
+- [x] **Phase 5: Pattern Extraction** - Stop hook agent analyzes session logs to identify coding patterns (completed 2026-02-25)
 - [ ] **Phase 6: Convention Lifecycle & Review** - 4-stage lifecycle with mandatory user review gate before CLAUDE.md
 - [ ] **Phase 7: Anti-Patterns & Reward Signals** - Correction detection, error tracking, and confidence scoring
 - [ ] **Phase 8: Path-Scoped Rules & Smart Injection** - Module-specific rules, file relationships, reward-weighted injection
@@ -95,8 +95,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 05-01-PLAN.md — Extraction agent prompt with classification taxonomy and evidence requirements
-- [ ] 05-02-PLAN.md — Stop agent hook registration and session log archive safety net
+- [x] 05-01-PLAN.md — Extraction agent prompt with classification taxonomy and evidence requirements
+- [x] 05-02-PLAN.md — Stop agent hook registration and session log archive safety net
 
 ### Phase 6: Convention Lifecycle & Review
 **Goal**: Conventions follow a rigorous 4-stage lifecycle and never reach CLAUDE.md without explicit user approval
@@ -160,7 +160,7 @@ Note: Phases 2, 3, 4 all depend on Phase 1 and could execute in parallel, but se
 | 2. Project Bootstrap | 2/2 | Complete | 2026-02-25 |
 | 3. Session Observation | 2/2 | Complete | 2026-02-25 |
 | 4. Explicit Feedback | 2/2 | Complete | 2026-02-25 |
-| 5. Pattern Extraction | 0/2 | Planned | - |
+| 5. Pattern Extraction | 2/2 | Complete | 2026-02-25 |
 | 6. Convention Lifecycle & Review | 0/3 | Not started | - |
 | 7. Anti-Patterns & Reward Signals | 0/2 | Not started | - |
 | 8. Path-Scoped Rules & Smart Injection | 0/3 | Not started | - |
