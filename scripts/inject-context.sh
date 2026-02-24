@@ -52,6 +52,7 @@ TOKEN_BUDGET=$(jq -r '.token_budget // 1000' "$STORE_DIR/config.json" 2>/dev/nul
 # Read conventions and format as markdown
 CONV_COUNT=$(jq 'length' "$CONVENTIONS_FILE" 2>/dev/null || echo 0)
 CAND_COUNT=$(jq 'length' "$STORE_DIR/candidates.json" 2>/dev/null || echo 0)
+AP_COUNT=$(jq 'length' "$STORE_DIR/anti-patterns.json" 2>/dev/null || echo 0)
 
 if [ "$CONV_COUNT" -gt 0 ]; then
   # Build markdown content from conventions array
@@ -81,12 +82,16 @@ else
   fi
 fi
 
+# Build status line (anti-pattern count shown only when > 0)
+STATUS_LINE="Auto-Context: ${CONV_COUNT} conventions active, ${CAND_COUNT} candidates pending"
+[ "$AP_COUNT" -gt 0 ] 2>/dev/null && STATUS_LINE="${STATUS_LINE}, ${AP_COUNT} anti-patterns"
+
 # Output hook response with additionalContext for Claude
 cat << EOF
 {
   "hookSpecificOutput": {
     "hookEventName": "SessionStart",
-    "additionalContext": "Auto-Context: ${CONV_COUNT} conventions active, ${CAND_COUNT} candidates pending"
+    "additionalContext": "${STATUS_LINE}"
   }
 }
 EOF
