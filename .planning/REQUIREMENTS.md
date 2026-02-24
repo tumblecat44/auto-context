@@ -11,8 +11,8 @@ Requirements for initial release. Each maps to roadmap phases.
 
 - [x] **PLUG-01**: Plugin manifest (plugin.json) registers hooks, skills, agents automatically on install
 - [x] **PLUG-02**: Plugin operates zero-config — no user configuration needed after `claude plugin install`
-- [ ] **PLUG-03**: CLAUDE.md auto-content lives in marker sections (`<!-- auto-context:start/end -->`), user content never touched
-- [ ] **PLUG-04**: Marker section validates integrity on every injection (handles corruption, duplication, missing markers)
+- [x] **PLUG-03**: CLAUDE.md auto-content lives in marker sections (`<!-- auto-context:start/end -->`), user content never touched
+- [x] **PLUG-04**: Marker section validates integrity on every injection (handles corruption, duplication, missing markers)
 - [x] **PLUG-05**: `claude plugin validate .` passes on the plugin package
 
 ### Bootstrap & Discovery
@@ -69,10 +69,10 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Smart Injection
 
-- [ ] **INJT-01**: Hard token budget (max 1000 tokens) for auto-context CLAUDE.md section
+- [x] **INJT-01**: Hard token budget (max 1000 tokens) for auto-context CLAUDE.md section
 - [ ] **INJT-02**: Prioritize conventions by confidence score within token budget
 - [ ] **INJT-03**: Overflow high-confidence conventions to `.claude/rules/auto-context-*.md` with path-scoped frontmatter
-- [ ] **INJT-04**: SessionStart hook injects conventions → CLAUDE.md marker section
+- [x] **INJT-04**: SessionStart hook injects conventions → CLAUDE.md marker section
 
 ### Path-Scoped Rules
 
@@ -134,8 +134,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 |-------------|-------|--------|
 | PLUG-01 | Phase 1 | Complete |
 | PLUG-02 | Phase 1 | Complete |
-| PLUG-03 | Phase 1 | Pending |
-| PLUG-04 | Phase 1 | Pending |
+| PLUG-03 | Phase 1 | Complete |
+| PLUG-04 | Phase 1 | Complete |
 | PLUG-05 | Phase 1 | Complete |
 | BOOT-01 | Phase 2 | Pending |
 | BOOT-02 | Phase 2 | Pending |
@@ -168,10 +168,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | RWRD-02 | Phase 7 | Pending |
 | RWRD-03 | Phase 7 | Pending |
 | RWRD-04 | Phase 7 | Pending |
-| INJT-01 | Phase 1 | Pending |
+| INJT-01 | Phase 1 | Complete |
 | INJT-02 | Phase 8 | Pending |
 | INJT-03 | Phase 8 | Pending |
-| INJT-04 | Phase 1 | Pending |
+| INJT-04 | Phase 1 | Complete |
 | PATH-01 | Phase 8 | Pending |
 | PATH-02 | Phase 8 | Pending |
 | PATH-03 | Phase 8 | Pending |
