@@ -37,7 +37,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 Plans:
 - [x] 01-01-PLAN.md — Plugin scaffold, hook config, data store init, JSONL session log
-- [ ] 01-02-PLAN.md — CLAUDE.md marker injection with integrity validation and token budget enforcement
+- [x] 01-02-PLAN.md — CLAUDE.md marker injection with integrity validation and token budget enforcement
 
 ### Phase 2: Project Bootstrap
 **Goal**: Users run /ac-init and get high-quality project context that surpasses Claude Code's built-in /init
@@ -48,11 +48,11 @@ Plans:
   2. `/ac-init` detects architecture patterns and existing conventions beyond what `/init` produces
   3. Build/test/lint commands are auto-discovered from package.json, Makefile, pyproject.toml, Cargo.toml
   4. `/ac-reset` clears `.auto-context/` directory and removes CLAUDE.md auto-section cleanly
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 02-01: /ac-init skill for project scanning and context generation
-- [ ] 02-02: Closed-loop command discovery and /ac-reset skill
+- [ ] 02-01-PLAN.md — /ac-init skill with discover-commands script and multi-step scanning instructions
+- [ ] 02-02-PLAN.md — /ac-reset skill and plugin skills validation
 
 ### Phase 3: Session Observation
 **Goal**: The plugin silently captures file modifications and command executions in real-time with zero user-perceived latency
@@ -156,7 +156,7 @@ Note: Phases 2, 3, 4 all depend on Phase 1 and could execute in parallel, but se
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Plugin Skeleton & Injection | 1/2 | Complete    | 2026-02-24 |
+| 1. Plugin Skeleton & Injection | 2/2 | Complete    | 2026-02-24 |
 | 2. Project Bootstrap | 0/2 | Not started | - |
 | 3. Session Observation | 0/2 | Not started | - |
 | 4. Explicit Feedback | 0/2 | Not started | - |
