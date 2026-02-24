@@ -132,62 +132,62 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| PLUG-01 | TBD | Pending |
-| PLUG-02 | TBD | Pending |
-| PLUG-03 | TBD | Pending |
-| PLUG-04 | TBD | Pending |
-| PLUG-05 | TBD | Pending |
-| BOOT-01 | TBD | Pending |
-| BOOT-02 | TBD | Pending |
-| BOOT-03 | TBD | Pending |
-| BOOT-04 | TBD | Pending |
-| BOOT-05 | TBD | Pending |
-| OBSV-01 | TBD | Pending |
-| OBSV-02 | TBD | Pending |
-| OBSV-03 | TBD | Pending |
-| OBSV-04 | TBD | Pending |
-| OBSV-05 | TBD | Pending |
-| FDBK-01 | TBD | Pending |
-| FDBK-02 | TBD | Pending |
-| FDBK-03 | TBD | Pending |
-| EXTR-01 | TBD | Pending |
-| EXTR-02 | TBD | Pending |
-| EXTR-03 | TBD | Pending |
-| EXTR-04 | TBD | Pending |
-| LIFE-01 | TBD | Pending |
-| LIFE-02 | TBD | Pending |
-| LIFE-03 | TBD | Pending |
-| LIFE-04 | TBD | Pending |
-| LIFE-05 | TBD | Pending |
-| LIFE-06 | TBD | Pending |
-| ANTI-01 | TBD | Pending |
-| ANTI-02 | TBD | Pending |
-| ANTI-03 | TBD | Pending |
-| ANTI-04 | TBD | Pending |
-| RWRD-01 | TBD | Pending |
-| RWRD-02 | TBD | Pending |
-| RWRD-03 | TBD | Pending |
-| RWRD-04 | TBD | Pending |
-| INJT-01 | TBD | Pending |
-| INJT-02 | TBD | Pending |
-| INJT-03 | TBD | Pending |
-| INJT-04 | TBD | Pending |
-| PATH-01 | TBD | Pending |
-| PATH-02 | TBD | Pending |
-| PATH-03 | TBD | Pending |
-| PRSC-01 | TBD | Pending |
-| PRSC-02 | TBD | Pending |
-| TRNS-01 | TBD | Pending |
-| TRNS-02 | TBD | Pending |
-| TRNS-03 | TBD | Pending |
-| TRNS-04 | TBD | Pending |
-| TRNS-05 | TBD | Pending |
+| PLUG-01 | Phase 1 | Pending |
+| PLUG-02 | Phase 1 | Pending |
+| PLUG-03 | Phase 1 | Pending |
+| PLUG-04 | Phase 1 | Pending |
+| PLUG-05 | Phase 1 | Pending |
+| BOOT-01 | Phase 2 | Pending |
+| BOOT-02 | Phase 2 | Pending |
+| BOOT-03 | Phase 2 | Pending |
+| BOOT-04 | Phase 8 | Pending |
+| BOOT-05 | Phase 8 | Pending |
+| OBSV-01 | Phase 3 | Pending |
+| OBSV-02 | Phase 3 | Pending |
+| OBSV-03 | Phase 3 | Pending |
+| OBSV-04 | Phase 1 | Pending |
+| OBSV-05 | Phase 3 | Pending |
+| FDBK-01 | Phase 4 | Pending |
+| FDBK-02 | Phase 4 | Pending |
+| FDBK-03 | Phase 4 | Pending |
+| EXTR-01 | Phase 5 | Pending |
+| EXTR-02 | Phase 5 | Pending |
+| EXTR-03 | Phase 5 | Pending |
+| EXTR-04 | Phase 5 | Pending |
+| LIFE-01 | Phase 6 | Pending |
+| LIFE-02 | Phase 6 | Pending |
+| LIFE-03 | Phase 6 | Pending |
+| LIFE-04 | Phase 6 | Pending |
+| LIFE-05 | Phase 6 | Pending |
+| LIFE-06 | Phase 6 | Pending |
+| ANTI-01 | Phase 7 | Pending |
+| ANTI-02 | Phase 7 | Pending |
+| ANTI-03 | Phase 7 | Pending |
+| ANTI-04 | Phase 7 | Pending |
+| RWRD-01 | Phase 7 | Pending |
+| RWRD-02 | Phase 7 | Pending |
+| RWRD-03 | Phase 7 | Pending |
+| RWRD-04 | Phase 7 | Pending |
+| INJT-01 | Phase 1 | Pending |
+| INJT-02 | Phase 8 | Pending |
+| INJT-03 | Phase 8 | Pending |
+| INJT-04 | Phase 1 | Pending |
+| PATH-01 | Phase 8 | Pending |
+| PATH-02 | Phase 8 | Pending |
+| PATH-03 | Phase 8 | Pending |
+| PRSC-01 | Phase 6 | Pending |
+| PRSC-02 | Phase 6 | Pending |
+| TRNS-01 | Phase 6 | Pending |
+| TRNS-02 | Phase 6 | Pending |
+| TRNS-03 | Phase 2 | Pending |
+| TRNS-04 | Phase 4 | Pending |
+| TRNS-05 | Phase 6 | Pending |
 
 **Coverage:**
-- v1 requirements: 47 total
-- Mapped to phases: 0
-- Unmapped: 47 (pending roadmap creation)
+- v1 requirements: 50 total
+- Mapped to phases: 50
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-02-24*
-*Last updated: 2026-02-24 after initial definition*
+*Last updated: 2026-02-24 after roadmap creation*
