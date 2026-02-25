@@ -29,6 +29,21 @@ mkdir -p "$STORE_DIR"
 }
 CONF
 
+# --- Context Restoration from PreCompact Backup ---
+BACKUP_DIR="${STORE_DIR}/backup"
+if [ -d "$BACKUP_DIR" ]; then
+  for f in conventions.json candidates.json anti-patterns.json lifecycle.json; do
+    # Restore if primary file is empty/corrupted but backup exists and is valid
+    if [ -f "$BACKUP_DIR/$f" ] && [ -s "$BACKUP_DIR/$f" ]; then
+      if [ ! -s "$STORE_DIR/$f" ] || ! jq empty "$STORE_DIR/$f" 2>/dev/null; then
+        cp "$BACKUP_DIR/$f" "$STORE_DIR/$f" 2>/dev/null || true
+      fi
+    fi
+  done
+  # Clean up backup directory after restore check
+  rm -rf "$BACKUP_DIR" 2>/dev/null || true
+fi
+
 # --- Lifecycle Initialization ---
 init_lifecycle "$STORE_DIR"
 
