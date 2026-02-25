@@ -82,8 +82,8 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Context Preservation
 
-- [ ] **PRSC-01**: PreCompact hook backs up critical context data before context compression
-- [ ] **PRSC-02**: SessionStart hook restores context from backup if needed
+- [x] **PRSC-01**: PreCompact hook backs up critical context data before context compression
+- [x] **PRSC-02**: SessionStart hook restores context from backup if needed
 
 ### Transparency & Control
 
@@ -175,8 +175,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | PATH-01 | Phase 8 | Pending |
 | PATH-02 | Phase 8 | Pending |
 | PATH-03 | Phase 8 | Pending |
-| PRSC-01 | Phase 6 | Pending |
-| PRSC-02 | Phase 6 | Pending |
+| PRSC-01 | Phase 6 | Complete |
+| PRSC-02 | Phase 6 | Complete |
 | TRNS-01 | Phase 6 | Complete |
 | TRNS-02 | Phase 6 | Complete |
 | TRNS-03 | Phase 2 | Pending |
