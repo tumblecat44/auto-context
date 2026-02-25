@@ -1,5 +1,8 @@
 {
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "auto-context",
+  "version": "0.1.0",
+  "description": "Automatic context engineering - project conventions accumulate and refine as you code",
   "owner": {
     "name": "tumblecat44",
     "url": "https://github.com/tumblecat44"
@@ -7,9 +10,18 @@
   "plugins": [
     {
       "name": "auto-context",
-      "source": ".",
       "description": "Automatic context engineering - project conventions accumulate and refine as you code",
-      "version": "0.1.0"
+      "version": "0.1.0",
+      "author": {
+        "name": "tumblecat44"
+      },
+      "repository": "https://github.com/tumblecat44/auto-context",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/tumblecat44/auto-context.git"
+      },
+      "category": "development",
+      "keywords": ["context-engineering", "CLAUDE.md", "automation", "conventions"]
     }
   ]
 }
