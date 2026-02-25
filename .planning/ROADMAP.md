@@ -141,12 +141,11 @@ Plans:
   3. Conventions are prioritized by confidence score within the token budget
   4. High-confidence conventions that overflow the CLAUDE.md token budget are placed in `.claude/rules/` files
   5. File co-change relationships are tracked from session observations and git history into `.auto-context/file-relations.json`
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 08-01: File relationship mapping and path-scoped convention detection
-- [ ] 08-02: Path-scoped rule generation (.claude/rules/)
-- [ ] 08-03: Smart injection with reward-weighted prioritization
+- [ ] 08-01-PLAN.md — File co-change tracking from git history and session observations
+- [ ] 08-02-PLAN.md — Path-scoped rule generation and smart confidence-weighted injection pipeline
 
 ## Progress
 
@@ -163,4 +162,4 @@ Note: Phases 2, 3, 4 all depend on Phase 1 and could execute in parallel, but se
 | 5. Pattern Extraction | 2/2 | Complete | 2026-02-25 |
 | 6. Convention Lifecycle & Review | 3/3 | Complete    | 2026-02-25 |
 | 7. Anti-Patterns & Reward Signals | 2/2 | Complete | 2026-02-25 |
-| 8. Path-Scoped Rules & Smart Injection | 0/3 | Not started | - |
+| 8. Path-Scoped Rules & Smart Injection | 0/2 | Not started | - |
