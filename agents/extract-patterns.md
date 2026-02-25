@@ -64,6 +64,26 @@ After correction detection, compute the session reward score:
    ```
 5. Write complete array atomically (read -> append -> write, same pattern as candidates.json)
 
+## File Co-Change Tracking (Phase 8)
+
+After correction detection and reward computation, track file relationships from this session.
+
+### Session Co-Change Pairs
+
+1. Collect all unique file paths from `file_write` and `file_edit` events in session-log.jsonl
+2. Convert to relative paths (strip `cwd` prefix if present)
+3. Sort the file list alphabetically
+4. If fewer than 2 unique files, skip co-change tracking (no pairs possible)
+5. Generate all unique pairs where file_a < file_b (canonical ordering)
+6. Read existing `.auto-context/file-relations.json` (if missing or empty, create with `{"version":1,"updated_at":"<current-ISO-8601>","git_commits_analyzed":0,"pairs":[]}`)
+7. For each pair:
+   a. If pair already exists in file-relations.json: increment `count` by 1, ensure `"session"` is in the `sources` array, update `last_seen` to current ISO-8601 timestamp
+   b. If pair is new: add with `count: 1`, `sources: ["session"]`, `last_seen: <current-ISO-8601>`
+8. Cap total pairs at 500 (keep highest count), write atomically (read -> merge -> write)
+9. If any error occurs during co-change tracking, log silently and continue (consistent with existing error handling pattern)
+
+**Important:** Use Read and Write tools to manipulate the JSON directly. Do NOT call shell library functions. The shell library (`scripts/lib/file-relations.sh`) is for `/ac-init` bootstrap usage. The agent handles session-level tracking independently using tool calls.
+
 ## Pattern Analysis
 
 Read each session log entry and identify patterns from:
@@ -173,7 +193,7 @@ Write the complete candidates array atomically: read existing -> merge new -> wr
 
 ## Final Instructions
 
-- Perform correction detection and reward computation FIRST (metadata-only, fast), then proceed with pattern extraction (requires file reads, slower)
+- Perform correction detection, reward computation, and file co-change tracking FIRST (metadata-only, fast), then proceed with pattern extraction (requires file reads, slower)
 - If any error occurs during correction detection or reward computation, log the issue silently and continue with pattern extraction
 - After writing candidates (or skipping if none found), respond with: `{"ok": true}`
 - **NEVER respond with `{"ok": false}`** -- pattern extraction is background work and must never block Claude from stopping
