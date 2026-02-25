@@ -12,6 +12,7 @@ SESSION_ID=$(echo "$INPUT" | jq -r '.session_id // "unknown"')
 source "${SCRIPT_DIR}/lib/markers.sh"
 source "${SCRIPT_DIR}/lib/tokens.sh"
 source "${SCRIPT_DIR}/lib/lifecycle.sh"
+source "${SCRIPT_DIR}/lib/path-rules.sh"
 
 # --- Data Store Initialization ---
 STORE_DIR="${CWD}/.auto-context"
@@ -81,7 +82,7 @@ decay_conventions "$STORE_DIR" "$SESSION_COUNT"
 CLAUDE_MD="${CWD}/CLAUDE.md"
 TOKEN_BUDGET=$(jq -r '.token_budget // 1000' "$STORE_DIR/config.json" 2>/dev/null || echo 1000)
 
-# Get active conventions filtered by stage and capped at 50
+# Get active conventions filtered by stage and capped at 50 (already confidence-sorted)
 ACTIVE_CONVS=$(get_active_conventions "$STORE_DIR" 50)
 CONV_COUNT=$(echo "$ACTIVE_CONVS" | jq 'length')
 
@@ -112,14 +113,76 @@ AP_TOKENS=$(estimate_tokens "$AP_CONTENT")
 CONV_BUDGET=$((TOKEN_BUDGET - AP_TOKENS - 50))
 [ "$CONV_BUDGET" -lt 100 ] && CONV_BUDGET=100  # minimum convention budget
 
-# Build convention section with adjusted budget
-CONV_CONTENT=""
+# --- Phase 8: Path-Scoped Detection & Smart Injection ---
+RULES_DIR="${CWD}/.claude/rules"
+
+# Step 1: Clean up stale auto-context-*.md rule files
+cleanup_auto_rules "$RULES_DIR"
+
+# Step 2: Separate path-scoped vs global conventions
+PATH_SCOPED="[]"
+GLOBAL_CONVS="[]"
+OVERFLOW="[]"
+
 if [ "$CONV_COUNT" -gt 0 ]; then
-  CONV_CONTENT=$(echo "$ACTIVE_CONVS" | jq -r '"## Project Conventions (Auto-Context)\n\n" + (map("- " + .text) | join("\n"))')
-  CONV_CONTENT=$(enforce_budget "$CONV_CONTENT" "$CONV_BUDGET")
+  for i in $(seq 0 $((CONV_COUNT - 1))); do
+    CONV=$(echo "$ACTIVE_CONVS" | jq ".[$i]")
+    SCOPE=$(detect_path_scope "$CONV")
+    if [ -n "$SCOPE" ]; then
+      PATH_SCOPED=$(echo "$PATH_SCOPED" | jq --arg scope "$SCOPE" --argjson conv "$CONV" '. + [$conv + {path_scope: $scope}]')
+    else
+      GLOBAL_CONVS=$(echo "$GLOBAL_CONVS" | jq --argjson conv "$CONV" '. + [$conv]')
+    fi
+  done
 fi
 
-# Combine sections and inject
+# Step 3: Generate path-scoped rule files
+PATH_SCOPED_COUNT=$(echo "$PATH_SCOPED" | jq 'length')
+if [ "$PATH_SCOPED_COUNT" -gt 0 ]; then
+  mkdir -p "$RULES_DIR"
+  GROUPED=$(echo "$PATH_SCOPED" | jq '[group_by(.path_scope)[] | {scope: .[0].path_scope, convs: [.[].text]}]')
+  generate_rule_files "$RULES_DIR" "$GROUPED"
+fi
+
+# Step 4: Build CLAUDE.md content line-by-line with confidence-sorted budget
+CONV_CONTENT=""
+GLOBAL_COUNT=$(echo "$GLOBAL_CONVS" | jq 'length')
+INJECTED_COUNT=0
+
+if [ "$GLOBAL_COUNT" -gt 0 ]; then
+  HEADER="## Project Conventions (Auto-Context)\n\n"
+  ACCUMULATED=$(estimate_tokens "$(printf '%b' "$HEADER")")
+  CONV_LINES=""
+
+  for i in $(seq 0 $((GLOBAL_COUNT - 1))); do
+    CONV_TEXT=$(echo "$GLOBAL_CONVS" | jq -r ".[$i].text")
+    LINE="- ${CONV_TEXT}"
+    LINE_TOKENS=$(estimate_tokens "$LINE")
+    NEW_TOTAL=$((ACCUMULATED + LINE_TOKENS + 1))
+
+    if [ "$NEW_TOTAL" -le "$CONV_BUDGET" ]; then
+      CONV_LINES="${CONV_LINES}${LINE}\n"
+      ACCUMULATED=$NEW_TOTAL
+      INJECTED_COUNT=$((INJECTED_COUNT + 1))
+    else
+      # Over budget: add to overflow
+      OVERFLOW=$(echo "$OVERFLOW" | jq --arg t "$CONV_TEXT" '. + [$t]')
+    fi
+  done
+
+  if [ -n "$CONV_LINES" ]; then
+    CONV_CONTENT="$(printf '%b' "${HEADER}${CONV_LINES}")"
+  fi
+fi
+
+# Step 5: Write overflow file if any global conventions exceeded budget
+OVERFLOW_COUNT=$(echo "$OVERFLOW" | jq 'length')
+if [ "$OVERFLOW_COUNT" -gt 0 ]; then
+  mkdir -p "$RULES_DIR"
+  write_overflow_file "$RULES_DIR" "$OVERFLOW"
+fi
+
+# Step 6: Combine and inject into CLAUDE.md
 FULL_CONTENT=""
 [ -n "$CONV_CONTENT" ] && FULL_CONTENT="$CONV_CONTENT"
 if [ -n "$AP_CONTENT" ]; then
@@ -138,8 +201,12 @@ fi
 # Count review-pending candidates for user awareness
 REVIEW_COUNT=$(jq '[.[] | select(.stage == "review_pending")] | length' "$STORE_DIR/candidates.json" 2>/dev/null || echo 0)
 
-# Build status line
-STATUS_LINE="Auto-Context: ${CONV_COUNT} conventions active, ${CAND_COUNT} candidates pending"
+# Build status line (INJECTED_COUNT = conventions in CLAUDE.md only, not overflow/path-scoped)
+TOTAL_ACTIVE=$((INJECTED_COUNT + PATH_SCOPED_COUNT + OVERFLOW_COUNT))
+STATUS_LINE="Auto-Context: ${INJECTED_COUNT} conventions injected"
+[ "$PATH_SCOPED_COUNT" -gt 0 ] && STATUS_LINE="${STATUS_LINE}, ${PATH_SCOPED_COUNT} path-scoped"
+[ "$OVERFLOW_COUNT" -gt 0 ] && STATUS_LINE="${STATUS_LINE}, ${OVERFLOW_COUNT} overflow"
+STATUS_LINE="${STATUS_LINE}, ${CAND_COUNT} candidates pending"
 [ "$REVIEW_COUNT" -gt 0 ] 2>/dev/null && STATUS_LINE="${STATUS_LINE} (${REVIEW_COUNT} ready for review)"
 [ "$AP_COUNT" -gt 0 ] 2>/dev/null && STATUS_LINE="${STATUS_LINE}, ${AP_COUNT} anti-patterns"
 
