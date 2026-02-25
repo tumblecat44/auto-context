@@ -125,11 +125,11 @@ Plans:
   3. Anti-patterns from explicit "don't do this" feedback are auto-registered and injected into CLAUDE.md
   4. Write->Edit pair analysis produces implicit reward signals combined with explicit feedback (10x weight) for confidence scoring
   5. /ac-status displays signal quality breakdown and reward trends
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 07-01: Anti-pattern detection from corrections and errors
-- [ ] 07-02: Reward signal tracking and confidence scoring
+- [ ] 07-01-PLAN.md — Anti-pattern detection engine, CLAUDE.md injection pipeline, and reward signal storage
+- [ ] 07-02-PLAN.md — Reward signal display and anti-pattern breakdown in /ac-status
 
 ### Phase 8: Path-Scoped Rules & Smart Injection
 **Goal**: Conventions that apply only to specific modules are delivered as path-scoped rules, and injection prioritizes by confidence within the token budget
