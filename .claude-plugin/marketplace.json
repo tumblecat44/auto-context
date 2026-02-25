@@ -1,0 +1,15 @@
+{
+  "name": "auto-context",
+  "owner": {
+    "name": "tumblecat44",
+    "url": "https://github.com/tumblecat44"
+  },
+  "plugins": [
+    {
+      "name": "auto-context",
+      "source": ".",
+      "description": "Automatic context engineering - project conventions accumulate and refine as you code",
+      "version": "0.1.0"
+    }
+  ]
+}
