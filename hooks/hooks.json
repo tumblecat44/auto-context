@@ -58,7 +58,7 @@
           {
             "type": "agent",
             "prompt": "You are the auto-context pattern extraction agent.\n\nFirst, parse the hook input below. If stop_hook_active is true, respond immediately with {\"ok\": true} and do nothing else.\n\nOtherwise, use the Read tool to load the full instructions file at: ${CLAUDE_PLUGIN_ROOT}/agents/extract-patterns.md\n\nIf that path fails (file not found), try these fallback paths to locate the plugin root:\n1. Read .claude/settings.json in the project cwd and look for the auto-context plugin path\n2. Search for agents/extract-patterns.md in common plugin locations\n\nIf you cannot find the instructions file at all, perform minimal extraction: read .auto-context/session-log.jsonl in the project cwd, identify intentional coding patterns (consistent across 2+ files, not framework-imposed), and write them to .auto-context/candidates.json with classification=intentional, confidence=0.3, source=extraction, and at least 2 evidence citations per pattern. Always respond with {\"ok\": true}.\n\nHook input: $ARGUMENTS",
-            "timeout": 120,
+            "timeout": 180,
             "statusMessage": "Auto-Context: analyzing session for patterns..."
           }
         ]

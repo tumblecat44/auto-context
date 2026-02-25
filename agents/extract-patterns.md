@@ -18,6 +18,52 @@ Use the Read tool to load `.auto-context/session-log.jsonl` in the project `cwd`
 Count events that are NOT `session_start` (i.e., count `file_write`, `file_edit`, `bash_command`, `explicit_feedback`, `bash_error` entries).
 If fewer than 3 meaningful events exist, respond with `{"ok": true}` and do nothing else.
 
+## Correction Detection (Phase 7)
+
+Perform correction detection and reward computation FIRST (metadata-only, fast), then proceed with pattern extraction (requires file reads, slower).
+
+### Write->Edit Pair Analysis
+
+1. Collect all `file_write` and `file_edit` events from session-log.jsonl
+2. Group by file path
+3. For each file with BOTH a `file_write` AND subsequent `file_edit`:
+   a. Check for intervening events between the Write and Edit (bash_command, explicit_feedback, file_write/file_edit to a DIFFERENT file)
+   b. If intervening events exist: potential correction. Use Read tool to examine the file, determine what was corrected, write concise anti-pattern to `.auto-context/anti-patterns.json` with `source: "correction"`, `confidence: 0.5`, `stage: "active"`, `occurrences: 1`, `evidence: [{file, write_ts, edit_ts}]`
+   c. If NO intervening events (Write immediately followed by Edit on same file): skip -- likely normal Claude refinement
+4. Files written but NEVER edited = positive implicit signals (count for reward)
+
+**Deduplication for anti-patterns**: Before writing correction-detected anti-patterns, read existing `anti-patterns.json` entries. If a semantically equivalent entry exists, increment its `occurrences` instead of duplicating.
+
+### Error Pattern Analysis
+
+1. Collect all `bash_error` events from session-log.jsonl
+2. For each error, extract normalized error key: strip absolute path prefixes with sed, strip line/column numbers, keep first 100 chars
+3. Read existing `anti-patterns.json` entries with `source: "error"`
+4. For matching error pattern: increment `occurrences`, add `session_id` to `sessions_seen` array
+5. If `occurrences >= 2` AND `sessions_seen` has 2+ unique sessions: set `stage: "active"`, `confidence: 0.6`
+6. If no match: add new entry with `source: "error"`, `stage: "observation"`, `confidence: 0.3`, `occurrences: 1`, `sessions_seen: [session_id]`, `error_pattern: "normalized error text"`
+
+## Reward Signal Computation (Phase 7)
+
+After correction detection, compute the session reward score:
+
+1. Count implicit signals:
+   - `implicit_positive` = count of files written but not subsequently edited
+   - `implicit_negative` = count of files with Write->Edit corrections (detected above)
+2. Count explicit signals from session log:
+   - `explicit_positive` = count of `explicit_feedback` events with `type: "convention"`
+   - `explicit_negative` = count of `explicit_feedback` events with `type: "anti-pattern"`
+3. Compute weighted score per FDBK-03 (10x explicit weight):
+   - `weighted_positive = implicit_positive + (explicit_positive * 10)`
+   - `weighted_negative = implicit_negative + (explicit_negative * 10)`
+   - `total = weighted_positive + weighted_negative`
+   - `reward_score = weighted_positive / total` (if total > 0, else 0.5)
+4. Read existing `.auto-context/rewards.json` array (or start with `[]`), append new entry:
+   ```json
+   {"session_id": "...", "ts": "ISO-8601", "implicit_positive": N, "implicit_negative": N, "explicit_positive": N, "explicit_negative": N, "reward_score": 0.XX, "files_analyzed": N}
+   ```
+5. Write complete array atomically (read -> append -> write, same pattern as candidates.json)
+
 ## Pattern Analysis
 
 Read each session log entry and identify patterns from:
@@ -127,7 +173,9 @@ Write the complete candidates array atomically: read existing -> merge new -> wr
 
 ## Final Instructions
 
+- Perform correction detection and reward computation FIRST (metadata-only, fast), then proceed with pattern extraction (requires file reads, slower)
+- If any error occurs during correction detection or reward computation, log the issue silently and continue with pattern extraction
 - After writing candidates (or skipping if none found), respond with: `{"ok": true}`
 - **NEVER respond with `{"ok": false}`** -- pattern extraction is background work and must never block Claude from stopping
 - If any error occurs during extraction (file not found, JSON parse error, etc.), silently skip and respond with `{"ok": true}`
-- Keep your analysis focused and efficient -- you have a 120-second timeout
+- Keep your analysis focused and efficient -- you have a 180-second timeout

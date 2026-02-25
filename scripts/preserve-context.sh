@@ -17,7 +17,7 @@ BACKUP_DIR="${STORE_DIR}/backup"
 mkdir -p "$BACKUP_DIR"
 
 # Back up critical data files (silently skip missing files)
-for f in conventions.json candidates.json anti-patterns.json lifecycle.json; do
+for f in conventions.json candidates.json anti-patterns.json lifecycle.json rewards.json; do
   [ -f "$STORE_DIR/$f" ] && cp "$STORE_DIR/$f" "$BACKUP_DIR/$f" 2>/dev/null || true
 done
 
