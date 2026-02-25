@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** Use Claude Code normally, and your project context improves automatically.
-**Current focus:** Phase 8: Path-Scoped Rules & Smart Injection
+**Current focus:** All phases complete
 
 ## Current Position
 
-Phase: 8 of 8 (Path-Scoped Rules & Smart Injection) -- PENDING
-Plan: 1 of 3 in current phase
-Status: Phase 7 Complete, ready for Phase 8
-Last activity: 2026-02-25 -- Completed 07-02 /ac-status reward signal display (1 task, 1 file)
+Phase: 8 of 8 (Path-Scoped Rules & Smart Injection) -- COMPLETE
+Plan: 2 of 2 in current phase
+Status: All 8 phases complete
+Last activity: 2026-02-25 -- Completed 08-02 path-scoped rules and smart injection (2 tasks, 4 files)
 
-Progress: [#########.] 93%
+Progress: [##########] 100%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 15
+- Total plans completed: 17
 - Average duration: 2.3min
-- Total execution time: 0.6 hours
+- Total execution time: 0.7 hours
 
 **By Phase:**
 
@@ -42,10 +42,12 @@ Progress: [#########.] 93%
 | Phase 06 P03 | 1min | 1 task | 3 files |
 | Phase 07 P01 | 2min | 2 tasks | 4 files |
 | Phase 07 P02 | 1min | 1 task | 1 file |
+| Phase 08 P01 | 2min | 2 tasks | 2 files |
+| Phase 08 P02 | 3min | 2 tasks | 2 files |
 
 **Recent Trend:**
-- Last 5 plans: 2min, 2min, 1min, 2min, 1min
-- Trend: stable/improving
+- Last 5 plans: 1min, 2min, 1min, 2min, 3min
+- Trend: stable
 
 *Updated after each plan completion*
 
@@ -101,6 +103,13 @@ Recent decisions affecting current work:
 - [Phase 07]: Stop hook timeout 120->180s for extended agent responsibilities
 - [Phase 07]: rewards.json as JSON array (not JSONL) for easier jq aggregation in /ac-status
 - [Phase 07]: Missing .source field in anti-patterns.json treated as "explicit" (backward compat with Phase 4)
+- [Phase 08]: Shell library for git co-change extraction, agent-driven for session co-change (separation of concerns)
+- [Phase 08]: Path-scoping requires 3+ evidence files sharing prefix at depth >= 2 (avoids over-scoping)
+- [Phase 08]: Bootstrap conventions never path-scoped (project-wide by nature)
+- [Phase 08]: Line-by-line budget building replaces bulk enforce_budget for conventions (clean cutoff, no mid-convention truncation)
+- [Phase 08]: Maximum 5 path-scoped rule files + 1 overflow file (prevents .claude/rules/ clutter)
+- [Phase 08]: Stale auto-context-*.md cleanup before regeneration every session (prevents stale rules)
+- [Phase 08]: Overflow file has no paths: frontmatter (global delivery for high-confidence conventions that exceeded budget)
 
 ### Pending Todos
 
@@ -113,5 +122,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: Completed 07-02-PLAN.md (Reward Signal Display) -- Phase 7 Complete
+Stopped at: Completed 08-02-PLAN.md (Path-Scoped Rules & Smart Injection) -- All Phases Complete
 Resume file: None

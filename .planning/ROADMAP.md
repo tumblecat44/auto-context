@@ -19,7 +19,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 5: Pattern Extraction** - Stop hook agent analyzes session logs to identify coding patterns (completed 2026-02-25)
 - [x] **Phase 6: Convention Lifecycle & Review** - 4-stage lifecycle with mandatory user review gate before CLAUDE.md (completed 2026-02-25)
 - [x] **Phase 7: Anti-Patterns & Reward Signals** - Correction detection, error tracking, and confidence scoring (completed 2026-02-25)
-- [ ] **Phase 8: Path-Scoped Rules & Smart Injection** - Module-specific rules, file relationships, reward-weighted injection
+- [x] **Phase 8: Path-Scoped Rules & Smart Injection** - Module-specific rules, file relationships, reward-weighted injection (completed 2026-02-25)
 
 ## Phase Details
 
@@ -144,8 +144,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 08-01-PLAN.md — File co-change tracking from git history and session observations
-- [ ] 08-02-PLAN.md — Path-scoped rule generation and smart confidence-weighted injection pipeline
+- [x] 08-01-PLAN.md — File co-change tracking from git history and session observations
+- [x] 08-02-PLAN.md — Path-scoped rule generation and smart confidence-weighted injection pipeline
 
 ## Progress
 
@@ -162,4 +162,4 @@ Note: Phases 2, 3, 4 all depend on Phase 1 and could execute in parallel, but se
 | 5. Pattern Extraction | 2/2 | Complete | 2026-02-25 |
 | 6. Convention Lifecycle & Review | 3/3 | Complete    | 2026-02-25 |
 | 7. Anti-Patterns & Reward Signals | 2/2 | Complete | 2026-02-25 |
-| 8. Path-Scoped Rules & Smart Injection | 0/2 | Not started | - |
+| 8. Path-Scoped Rules & Smart Injection | 2/2 | Complete | 2026-02-25 |
