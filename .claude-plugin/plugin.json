@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "description": "Automatic context engineering - project conventions accumulate and refine as you code",
   "author": {
-    "name": "dgsw67",
-    "url": "https://github.com/dgsw67"
+    "name": "tumblecat44",
+    "url": "https://github.com/tumblecat44"
   },
-  "repository": "https://github.com/dgsw67/auto-context",
+  "repository": "https://github.com/tumblecat44/auto-context",
   "license": "MIT",
   "keywords": ["context-engineering", "CLAUDE.md", "automation", "conventions"],
   "hooks": "./hooks/hooks.json"

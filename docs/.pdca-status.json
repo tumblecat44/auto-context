@@ -1,15 +1,36 @@
 {
   "version": "2.0",
-  "lastUpdated": "2026-02-24T10:30:00.000Z",
-  "activeFeatures": ["auto-context"],
+  "lastUpdated": "2026-02-25T01:55:28.762Z",
+  "activeFeatures": [
+    "auto-context",
+    "scripts"
+  ],
   "primaryFeature": "auto-context",
   "features": {
     "auto-context": {
-      "phase": "plan",
+      "phase": "do",
       "startedAt": "2026-02-24T10:30:00.000Z",
       "planDocument": "docs/01-plan/features/auto-context.plan.md",
       "matchRate": null,
-      "iterationCount": 0
+      "iterationCount": 0,
+      "phaseNumber": 3,
+      "lastFile": "/Users/dgsw67/auto-context/run-phases.sh",
+      "timestamps": {
+        "lastUpdated": "2026-02-24T15:55:36.959Z"
+      }
+    },
+    "scripts": {
+      "phase": "do",
+      "phaseNumber": 3,
+      "matchRate": null,
+      "iterationCount": 0,
+      "requirements": [],
+      "documents": {},
+      "timestamps": {
+        "started": "2026-02-24T15:54:42.284Z",
+        "lastUpdated": "2026-02-25T01:55:28.762Z"
+      },
+      "lastFile": "/Users/dgsw67/auto-context/scripts/inject-context.sh"
     }
   },
   "pipeline": {
@@ -20,7 +41,7 @@
   "session": {
     "startedAt": "2026-02-24T05:57:08.033Z",
     "onboardingCompleted": true,
-    "lastActivity": "2026-02-24T10:30:00.000Z"
+    "lastActivity": "2026-02-25T01:55:28.762Z"
   },
   "history": [
     {
@@ -28,6 +49,222 @@
       "feature": "auto-context",
       "timestamp": "2026-02-24T10:30:00.000Z",
       "details": "Plan document created from brainstorm + Steinberger reverse-engineering"
+    },
+    {
+      "timestamp": "2026-02-24T15:53:45.829Z",
+      "feature": "auto-context",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-24T15:54:42.284Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-24T15:54:43.129Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-24T15:55:30.984Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-24T15:55:36.959Z",
+      "feature": "auto-context",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-24T15:59:26.138Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-24T15:59:30.149Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-24T16:00:46.804Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-24T16:01:51.861Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-24T16:02:48.955Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-24T16:33:30.416Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-24T16:50:28.162Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-24T16:51:55.159Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-24T16:52:27.526Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-24T17:08:48.307Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-24T17:09:00.596Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-24T17:10:11.729Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-24T17:10:30.597Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-24T17:11:36.909Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-24T17:11:42.977Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-24T17:34:36.952Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-24T17:59:59.286Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-24T18:00:06.296Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-24T18:00:37.126Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-24T18:00:41.549Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-24T18:01:01.603Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-24T18:02:44.388Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-24T18:03:06.921Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-25T01:32:47.101Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-25T01:32:51.219Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-25T01:33:08.750Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-25T01:33:14.234Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-25T01:53:00.630Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-25T01:54:23.990Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-25T01:54:49.549Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
+    },
+    {
+      "timestamp": "2026-02-25T01:55:28.762Z",
+      "feature": "scripts",
+      "phase": "do",
+      "action": "updated"
     }
   ]
 }
