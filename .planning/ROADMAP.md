@@ -112,7 +112,7 @@ Plans:
 
 Plans:
 - [x] 06-01-PLAN.md — Lifecycle state machine: session counter, promotion, decay, cap enforcement, migration, changelog
-- [ ] 06-02-PLAN.md — /ac-review and /ac-status skills for mandatory review gate and pipeline visibility
+- [x] 06-02-PLAN.md — /ac-review and /ac-status skills for mandatory review gate and pipeline visibility
 - [ ] 06-03-PLAN.md — PreCompact context preservation hook and SessionStart restore logic
 
 ### Phase 7: Anti-Patterns & Reward Signals
@@ -161,6 +161,6 @@ Note: Phases 2, 3, 4 all depend on Phase 1 and could execute in parallel, but se
 | 3. Session Observation | 2/2 | Complete | 2026-02-25 |
 | 4. Explicit Feedback | 2/2 | Complete | 2026-02-25 |
 | 5. Pattern Extraction | 2/2 | Complete | 2026-02-25 |
-| 6. Convention Lifecycle & Review | 1/3 | In progress | - |
+| 6. Convention Lifecycle & Review | 2/3 | In progress | - |
 | 7. Anti-Patterns & Reward Signals | 0/2 | Not started | - |
 | 8. Path-Scoped Rules & Smart Injection | 0/3 | Not started | - |

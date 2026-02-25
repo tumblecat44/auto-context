@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** Use Claude Code normally, and your project context improves automatically.
-**Current focus:** Phase 6: Convention Lifecycle & Review
+**Current focus:** Phase 7: Anti-Pattern Detection & Reward Signals
 
 ## Current Position
 
-Phase: 6 of 8 (Convention Lifecycle & Review) -- IN PROGRESS
+Phase: 7 of 8 (Anti-Pattern Detection & Reward Signals) -- PENDING
 Plan: 1 of 3 in current phase
-Status: Plan 06-01 Complete (Lifecycle State Machine), continuing Phase 6
-Last activity: 2026-02-25 -- Completed 06-01 lifecycle state machine (2 tasks, 3 files)
+Status: Phase 6 Complete, ready for Phase 7
+Last activity: 2026-02-25 -- Completed 06-03 PreCompact context preservation (1 task, 3 files)
 
-Progress: [######....] 68%
+Progress: [########..] 81%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 11
-- Average duration: 2.8min
-- Total execution time: 0.51 hours
+- Total plans completed: 13
+- Average duration: 2.5min
+- Total execution time: 0.55 hours
 
 **By Phase:**
 
@@ -38,9 +38,11 @@ Progress: [######....] 68%
 | Phase 05 P01 | 2min | 1 task | 1 file |
 | Phase 05 P02 | 2min | 2 tasks | 2 files |
 | Phase 06 P01 | 2min | 2 tasks | 3 files |
+| Phase 06 P02 | 2min | 2 tasks | 2 files |
+| Phase 06 P03 | 1min | 1 task | 3 files |
 
 **Recent Trend:**
-- Last 5 plans: 3min, 2min, 2min, 2min, 2min
+- Last 5 plans: 2min, 2min, 2min, 2min, 1min
 - Trend: stable/improving
 
 *Updated after each plan completion*
@@ -82,6 +84,14 @@ Recent decisions affecting current work:
 - [Phase 06]: last_referenced_session set to current session_count on migration (prevents immediate decay)
 - [Phase 06]: Candidates migrated with stage:observation for lifecycle consistency
 - [Phase 06]: Evicted conventions (beyond 50 cap) logged to changelog.jsonl for audit
+- [Phase 06]: Promoted extraction conventions get confidence 0.7 (above bootstrap 0.6, below explicit 1.0)
+- [Phase 06]: One candidate at a time with immediate disk write to prevent context compaction data loss
+- [Phase 06]: last_referenced_session from lifecycle.json on approval prevents immediate decay
+- [Phase 06]: ac-status is strictly read-only -- never modifies data files
+- [Phase 06]: PreCompact only supports type:command hooks (agent/prompt silently fail)
+- [Phase 06]: Backup dir cleaned up after restore check (one-time safety net per compaction)
+- [Phase 06]: jq empty for lightweight JSON validation in restore logic
+- [Phase 06]: Restore block placed before lifecycle init so recovered lifecycle.json is available
 
 ### Pending Todos
 
@@ -94,5 +104,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: Completed 06-01-PLAN.md (Lifecycle State Machine)
+Stopped at: Completed 06-03-PLAN.md (PreCompact Context Preservation) -- Phase 6 Complete
 Resume file: None

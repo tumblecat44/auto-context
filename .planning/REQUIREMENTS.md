@@ -51,7 +51,7 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **LIFE-03**: Conventions decay after 5+ sessions without reference
 - [x] **LIFE-04**: Decayed conventions removed from CLAUDE.md injection
 - [x] **LIFE-05**: Maximum 50 active conventions (lowest-confidence evicted when exceeded)
-- [ ] **LIFE-06**: Mandatory user review gate via /ac-review before any convention reaches CLAUDE.md in v1
+- [x] **LIFE-06**: Mandatory user review gate via /ac-review before any convention reaches CLAUDE.md in v1
 
 ### Anti-Pattern Detection
 
@@ -87,8 +87,8 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Transparency & Control
 
-- [ ] **TRNS-01**: `/ac-status` shows observation count, candidates, conventions, anti-patterns, reward trends
-- [ ] **TRNS-02**: `/ac-review` displays candidate list with approve/reject/edit per item
+- [x] **TRNS-01**: `/ac-status` shows observation count, candidates, conventions, anti-patterns, reward trends
+- [x] **TRNS-02**: `/ac-review` displays candidate list with approve/reject/edit per item
 - [ ] **TRNS-03**: `/ac-reset` clears `.auto-context/` directory and removes CLAUDE.md auto-section
 - [ ] **TRNS-04**: Session-start status line: "Auto-Context: N conventions active, M candidates pending"
 - [x] **TRNS-05**: Log convention changes with reason: "Added convention: use async/await (observed 5x across 3 sessions)"
@@ -159,7 +159,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | LIFE-03 | Phase 6 | Complete |
 | LIFE-04 | Phase 6 | Complete |
 | LIFE-05 | Phase 6 | Complete |
-| LIFE-06 | Phase 6 | Pending |
+| LIFE-06 | Phase 6 | Complete |
 | ANTI-01 | Phase 7 | Pending |
 | ANTI-02 | Phase 7 | Pending |
 | ANTI-03 | Phase 7 | Pending |
@@ -177,8 +177,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | PATH-03 | Phase 8 | Pending |
 | PRSC-01 | Phase 6 | Pending |
 | PRSC-02 | Phase 6 | Pending |
-| TRNS-01 | Phase 6 | Pending |
-| TRNS-02 | Phase 6 | Pending |
+| TRNS-01 | Phase 6 | Complete |
+| TRNS-02 | Phase 6 | Complete |
 | TRNS-03 | Phase 2 | Pending |
 | TRNS-04 | Phase 4 | Pending |
 | TRNS-05 | Phase 6 | Complete |
