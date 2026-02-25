@@ -18,7 +18,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 4: Explicit Feedback** - User prompts like "remember this" and "don't do this" captured as conventions/anti-patterns (completed 2026-02-25)
 - [x] **Phase 5: Pattern Extraction** - Stop hook agent analyzes session logs to identify coding patterns (completed 2026-02-25)
 - [x] **Phase 6: Convention Lifecycle & Review** - 4-stage lifecycle with mandatory user review gate before CLAUDE.md (completed 2026-02-25)
-- [ ] **Phase 7: Anti-Patterns & Reward Signals** - Correction detection, error tracking, and confidence scoring
+- [x] **Phase 7: Anti-Patterns & Reward Signals** - Correction detection, error tracking, and confidence scoring (completed 2026-02-25)
 - [ ] **Phase 8: Path-Scoped Rules & Smart Injection** - Module-specific rules, file relationships, reward-weighted injection
 
 ## Phase Details
@@ -128,8 +128,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 07-01-PLAN.md — Anti-pattern detection engine, CLAUDE.md injection pipeline, and reward signal storage
-- [ ] 07-02-PLAN.md — Reward signal display and anti-pattern breakdown in /ac-status
+- [x] 07-01-PLAN.md — Anti-pattern detection engine, CLAUDE.md injection pipeline, and reward signal storage
+- [x] 07-02-PLAN.md — Reward signal display and anti-pattern breakdown in /ac-status
 
 ### Phase 8: Path-Scoped Rules & Smart Injection
 **Goal**: Conventions that apply only to specific modules are delivered as path-scoped rules, and injection prioritizes by confidence within the token budget
@@ -162,5 +162,5 @@ Note: Phases 2, 3, 4 all depend on Phase 1 and could execute in parallel, but se
 | 4. Explicit Feedback | 2/2 | Complete | 2026-02-25 |
 | 5. Pattern Extraction | 2/2 | Complete | 2026-02-25 |
 | 6. Convention Lifecycle & Review | 3/3 | Complete    | 2026-02-25 |
-| 7. Anti-Patterns & Reward Signals | 0/2 | Not started | - |
+| 7. Anti-Patterns & Reward Signals | 2/2 | Complete | 2026-02-25 |
 | 8. Path-Scoped Rules & Smart Injection | 0/3 | Not started | - |

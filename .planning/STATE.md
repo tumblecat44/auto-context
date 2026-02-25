@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** Use Claude Code normally, and your project context improves automatically.
-**Current focus:** Phase 7: Anti-Pattern Detection & Reward Signals
+**Current focus:** Phase 8: Path-Scoped Rules & Smart Injection
 
 ## Current Position
 
-Phase: 7 of 8 (Anti-Pattern Detection & Reward Signals) -- PENDING
+Phase: 8 of 8 (Path-Scoped Rules & Smart Injection) -- PENDING
 Plan: 1 of 3 in current phase
-Status: Phase 6 Complete, ready for Phase 7
-Last activity: 2026-02-25 -- Completed 06-03 PreCompact context preservation (1 task, 3 files)
+Status: Phase 7 Complete, ready for Phase 8
+Last activity: 2026-02-25 -- Completed 07-02 /ac-status reward signal display (1 task, 1 file)
 
-Progress: [########..] 81%
+Progress: [#########.] 93%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 13
-- Average duration: 2.5min
-- Total execution time: 0.55 hours
+- Total plans completed: 15
+- Average duration: 2.3min
+- Total execution time: 0.6 hours
 
 **By Phase:**
 
@@ -40,9 +40,11 @@ Progress: [########..] 81%
 | Phase 06 P01 | 2min | 2 tasks | 3 files |
 | Phase 06 P02 | 2min | 2 tasks | 2 files |
 | Phase 06 P03 | 1min | 1 task | 3 files |
+| Phase 07 P01 | 2min | 2 tasks | 4 files |
+| Phase 07 P02 | 1min | 1 task | 1 file |
 
 **Recent Trend:**
-- Last 5 plans: 2min, 2min, 2min, 2min, 1min
+- Last 5 plans: 2min, 2min, 1min, 2min, 1min
 - Trend: stable/improving
 
 *Updated after each plan completion*
@@ -92,6 +94,13 @@ Recent decisions affecting current work:
 - [Phase 06]: Backup dir cleaned up after restore check (one-time safety net per compaction)
 - [Phase 06]: jq empty for lightweight JSON validation in restore logic
 - [Phase 06]: Restore block placed before lifecycle init so recovered lifecycle.json is available
+- [Phase 07]: Correction detection via Write->Edit pairs with intervening event heuristic (no intervening = normal refinement, skip)
+- [Phase 07]: Error pattern normalization: strip paths, strip line numbers, first 100 chars for comparison
+- [Phase 07]: Anti-pattern 200-token sub-budget within 1000-token total, conventions get remainder
+- [Phase 07]: Reward score formula: weighted_positive / total with 10x explicit weight per FDBK-03
+- [Phase 07]: Stop hook timeout 120->180s for extended agent responsibilities
+- [Phase 07]: rewards.json as JSON array (not JSONL) for easier jq aggregation in /ac-status
+- [Phase 07]: Missing .source field in anti-patterns.json treated as "explicit" (backward compat with Phase 4)
 
 ### Pending Todos
 
@@ -104,5 +113,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: Completed 06-03-PLAN.md (PreCompact Context Preservation) -- Phase 6 Complete
+Stopped at: Completed 07-02-PLAN.md (Reward Signal Display) -- Phase 7 Complete
 Resume file: None
