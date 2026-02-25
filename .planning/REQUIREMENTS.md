@@ -46,11 +46,11 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Convention Lifecycle
 
-- [ ] **LIFE-01**: 4-stage lifecycle: Observation → Candidate (3+ occurrences across 2+ sessions) → Convention → Decay
-- [ ] **LIFE-02**: Candidates require observations from 2+ independent sessions before promotion
-- [ ] **LIFE-03**: Conventions decay after 5+ sessions without reference
-- [ ] **LIFE-04**: Decayed conventions removed from CLAUDE.md injection
-- [ ] **LIFE-05**: Maximum 50 active conventions (lowest-confidence evicted when exceeded)
+- [x] **LIFE-01**: 4-stage lifecycle: Observation → Candidate (3+ occurrences across 2+ sessions) → Convention → Decay
+- [x] **LIFE-02**: Candidates require observations from 2+ independent sessions before promotion
+- [x] **LIFE-03**: Conventions decay after 5+ sessions without reference
+- [x] **LIFE-04**: Decayed conventions removed from CLAUDE.md injection
+- [x] **LIFE-05**: Maximum 50 active conventions (lowest-confidence evicted when exceeded)
 - [ ] **LIFE-06**: Mandatory user review gate via /ac-review before any convention reaches CLAUDE.md in v1
 
 ### Anti-Pattern Detection
@@ -91,7 +91,7 @@ Requirements for initial release. Each maps to roadmap phases.
 - [ ] **TRNS-02**: `/ac-review` displays candidate list with approve/reject/edit per item
 - [ ] **TRNS-03**: `/ac-reset` clears `.auto-context/` directory and removes CLAUDE.md auto-section
 - [ ] **TRNS-04**: Session-start status line: "Auto-Context: N conventions active, M candidates pending"
-- [ ] **TRNS-05**: Log convention changes with reason: "Added convention: use async/await (observed 5x across 3 sessions)"
+- [x] **TRNS-05**: Log convention changes with reason: "Added convention: use async/await (observed 5x across 3 sessions)"
 
 ## v2 Requirements
 
@@ -154,11 +154,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | EXTR-02 | Phase 5 | Pending |
 | EXTR-03 | Phase 5 | Pending |
 | EXTR-04 | Phase 5 | Pending |
-| LIFE-01 | Phase 6 | Pending |
-| LIFE-02 | Phase 6 | Pending |
-| LIFE-03 | Phase 6 | Pending |
-| LIFE-04 | Phase 6 | Pending |
-| LIFE-05 | Phase 6 | Pending |
+| LIFE-01 | Phase 6 | Complete |
+| LIFE-02 | Phase 6 | Complete |
+| LIFE-03 | Phase 6 | Complete |
+| LIFE-04 | Phase 6 | Complete |
+| LIFE-05 | Phase 6 | Complete |
 | LIFE-06 | Phase 6 | Pending |
 | ANTI-01 | Phase 7 | Pending |
 | ANTI-02 | Phase 7 | Pending |
@@ -181,7 +181,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | TRNS-02 | Phase 6 | Pending |
 | TRNS-03 | Phase 2 | Pending |
 | TRNS-04 | Phase 4 | Pending |
-| TRNS-05 | Phase 6 | Pending |
+| TRNS-05 | Phase 6 | Complete |
 
 **Coverage:**
 - v1 requirements: 50 total

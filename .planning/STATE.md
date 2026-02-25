@@ -9,19 +9,19 @@ See: .planning/PROJECT.md (updated 2026-02-24)
 
 ## Current Position
 
-Phase: 6 of 8 (Convention Lifecycle & Review) -- NOT STARTED
-Plan: 0 of 3 in current phase
-Status: Phase 5 Complete, Ready for Phase 6 Planning
-Last activity: 2026-02-25 -- Completed Phase 5 execution (2 plans, 3 tasks, all verified)
+Phase: 6 of 8 (Convention Lifecycle & Review) -- IN PROGRESS
+Plan: 1 of 3 in current phase
+Status: Plan 06-01 Complete (Lifecycle State Machine), continuing Phase 6
+Last activity: 2026-02-25 -- Completed 06-01 lifecycle state machine (2 tasks, 3 files)
 
-Progress: [######....] 62%
+Progress: [######....] 68%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 10
-- Average duration: 2.9min
-- Total execution time: 0.48 hours
+- Total plans completed: 11
+- Average duration: 2.8min
+- Total execution time: 0.51 hours
 
 **By Phase:**
 
@@ -37,9 +37,10 @@ Progress: [######....] 62%
 | Phase 04 P02 | 2min | 1 task | 1 file |
 | Phase 05 P01 | 2min | 1 task | 1 file |
 | Phase 05 P02 | 2min | 2 tasks | 2 files |
+| Phase 06 P01 | 2min | 2 tasks | 3 files |
 
 **Recent Trend:**
-- Last 5 plans: 3min, 3min, 2min, 2min, 2min
+- Last 5 plans: 3min, 2min, 2min, 2min, 2min
 - Trend: stable/improving
 
 *Updated after each plan completion*
@@ -77,6 +78,10 @@ Recent decisions affecting current work:
 - [Phase 05]: ${CLAUDE_PLUGIN_ROOT} for primary path with fallback resolution and inline minimal instructions
 - [Phase 05]: Confidence 0.3 for extraction candidates (below bootstrap 0.6+ and explicit 1.0)
 - [Phase 05]: Archive session-log.jsonl to .prev before SessionEnd truncation (race condition safety)
+- [Phase 06]: Explicit feedback gets stage:active immediately (user-approved by definition)
+- [Phase 06]: last_referenced_session set to current session_count on migration (prevents immediate decay)
+- [Phase 06]: Candidates migrated with stage:observation for lifecycle consistency
+- [Phase 06]: Evicted conventions (beyond 50 cap) logged to changelog.jsonl for audit
 
 ### Pending Todos
 
@@ -89,5 +94,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: Completed Phase 05 (Pattern Extraction complete, 3 tasks across 2 plans, all verified)
+Stopped at: Completed 06-01-PLAN.md (Lifecycle State Machine)
 Resume file: None
